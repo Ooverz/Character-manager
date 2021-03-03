@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <title> Character Manager </title>
+</head>
+
+<body>
+
+    <header class="bann my-4">
+        <h1 class="display-3">Comics fan</h1>
+        <p class="lead">Regroupez modifiez et créez vos personnages favoris !</p>
+        <p> Join us! </p>
+        <button id="myBtn"> Create your perso </button>
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1> Crée un nouveau personnage </h1>
+                <p> Rempli tous les champs avec les informations sur ton personnage </p>
+            </div>
+
+            <div>
+                <form action="#" method="post">
+                    <div class="field dob">
+                        <label for="hero-name">Name </label>
+                        <input type="text" name="name" id="hero-name" />
+                    </div>
+                    <div class="field dob">
+                        <label for="hero-alter-ego"> Short description </label>
+                        <input type="text" name="alter-ego" id="hero-alter-ego" />
+                    </div>
+                    <div class="field dob">
+                        <label for="hero-powers"> Select an image </label>
+                        <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
+                    </div>
+                    <div class="field dob">
+                        <label for="hero-powers"> Description </label>
+                        <input type="text" name="description" id="hero-descr" width="300px" />
+                    </div>
+                    <div class="actions">
+                        <button type="button" id="run"> Submit </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <template id="tpl-hero">
+            <li class="hero">
+                <h2 class="name"></h2>
+                <p class="descri"></p>
+                <img src="" class="img">
+            </li>
+        </template>
+
+    </main>
+    <script src="src/script.js"></script>
+</body>
+
+</html>

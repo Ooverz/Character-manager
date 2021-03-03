@@ -1,0 +1,17 @@
+{
+  "name": "@becode/js-intro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx seve -e '*.json,*.md,node_modules,_shared' -p 8000 -i .",
+    "api": "npx json-server ./_shared/api.json"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "json-server": "^0.16.1",
+    "startbootstrap-heroic-features": "^4.2.3"
+  },
+  "devDependencies": {
+    "seve": "^0.10.0"
+  }
+}
