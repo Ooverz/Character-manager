@@ -30,16 +30,16 @@
                         <input type="text" name="name" id="hero-name" />
                     </div>
                     <div class="field dob">
-                        <label for="hero-alter-ego"> Short description </label>
+                        <label for="heroShortDes"> Short description </label>
                         <input type="text" name="alter-ego" id="hero-alter-ego" />
                     </div>
                     <div class="field dob">
-                        <label for="hero-powers"> Select an image </label>
-                        <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
+                        <label for="heroDes"> Description </label>
+                        <input type="text" name="description" id="hero-descr" width="300px" />
                     </div>
                     <div class="field dob">
-                        <label for="hero-powers"> Description </label>
-                        <input type="text" name="description" id="hero-descr" width="300px" />
+                        <label for="heroImage"> Select an image </label>
+                        <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
                     </div>
                     <div class="actions">
                         <button type="button" id="run"> Submit </button>
@@ -59,8 +59,9 @@
                 <img src="" class="img">
             </li>
         </template>
-
+        <div id="target"></div>
     </main>
+    
     <script src="src/script.js"></script>
 </body>
 

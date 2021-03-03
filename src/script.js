@@ -1,3 +1,8 @@
+
+
+const inputs = Array.from(document.querySelectorAll("input"));
+console.log(inputs);
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -29,35 +34,42 @@ getData();
 const tpl = document.querySelector("#tpl-hero");
 const target = document.querySelector("#target");
 
-async function getData(){
+async function getData() {
     try {
         const hero = await fetch("https://character-database.becode.xyz/characters");
         const object = await hero.json();
 
-        heroes.forEach(({description, id, image, name, shortDescription}) => {
+        object.forEach(({ description, id, image, name, shortDescription }) => {
             const elt = tpl.cloneNode(true).content;
 
             elt.querySelector(".name").innerText = name;
             elt.querySelector(".descri").innerText = shortDescription;
-            elt.querySelector(".img").setAttribute("src", `data:image/gif;base64,${element.image}`);
+            elt.querySelector(".img").src = `data:image/*;base64,${image}`;
 
             target.appendChild(elt);
         });
         console.log(object);
-    } catch(err){
+    } catch (err) {
         console.error(err);
     }
 }
 
-// const resp = await fetch ("https://character-database.becode.xyz/characters", {
-//     method : "POST",
-//     headers : {
-//         "Content-Type" : "application/json",
-//     },
-//     body : JSON.stringify({
-//         name,
-//         shortDescription,
-//         description,
-//         image,
-//     })
-// })
+document.querySelector("#run").addEventListener("click", async function () {
+
+    const values = inputs.map(({ value }) => value.trim());
+    const [name, shortDescription, description] = values;
+    const resp = await fetch("https://character-database.becode.xyz/characters", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            name,
+            shortDescription,
+            description,
+            // image,
+        })
+
+    })    
+});
+
