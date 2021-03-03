@@ -28,24 +28,32 @@
                 <div>
                     <div>
                         <form action="#" method="post">
-                            <div class="field dob">
-                                <label for="hero-name">Name </label>
-                                <input type="text" name="name" id="hero-name" />
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="hero-name">Name </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="name" id="hero-name" />
+                                </div>
                             </div>
-                            <div class="field dob">
-                                <label for="heroShortDes"> Short description </label>
-                                <input type="text" name="alter-ego" id="hero-alter-ego" />
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="heroShortDes"> Short description </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="alter-ego" id="hero-alter-ego" />
+                                </div>
                             </div>
-                            <div class="field dob">
-                                <label for="heroDes"> Description </label>
-                                <input type="text" name="description" id="hero-descr" width="300px" />
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="heroDes"> Description </label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" id="createDescription" placeholder="Write here a full description of Hero." rows="10"></textarea>
+                                </div>
                             </div>
-                            <div class="field dob">
-                                <label for="heroImage"> Select an image </label>
-                                <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="heroImage"> Select an image </label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
+                                </div>
                             </div>
                             <div class="actions">
-                                <button type="button" id="run"> Submit </button>
+                                <button type="button" class="btn btn-dark" id="run"> Submit </button>
                             </div>
                         </form>
                     </div>
