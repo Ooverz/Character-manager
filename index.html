@@ -17,38 +17,40 @@
         <p class="lead"> Join us! </p>
         <button id="myBtn" class="btn btn-warning toggleScroll"> Create your perso </button>
 
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modal" style="display: block;">
+            <div class="container">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1> Crée un nouveau personnage </h1>
+                    <p> Rempli tous les champs avec les informations sur ton personnage </p>
+                </div>
 
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h1> Crée un nouveau personnage </h1>
-                <p> Rempli tous les champs avec les informations sur ton personnage </p>
+                <div>
+                    <div>
+                        <form action="#" method="post">
+                            <div class="field dob">
+                                <label for="hero-name">Name </label>
+                                <input type="text" name="name" id="hero-name" />
+                            </div>
+                            <div class="field dob">
+                                <label for="heroShortDes"> Short description </label>
+                                <input type="text" name="alter-ego" id="hero-alter-ego" />
+                            </div>
+                            <div class="field dob">
+                                <label for="heroDes"> Description </label>
+                                <input type="text" name="description" id="hero-descr" width="300px" />
+                            </div>
+                            <div class="field dob">
+                                <label for="heroImage"> Select an image </label>
+                                <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
+                            </div>
+                            <div class="actions">
+                                <button type="button" id="run"> Submit </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <form action="#" method="post">
-                    <div class="field dob">
-                        <label for="hero-name">Name </label>
-                        <input type="text" name="name" id="hero-name" />
-                    </div>
-                    <div class="field dob">
-                        <label for="hero-alter-ego"> Short description </label>
-                        <input type="text" name="alter-ego" id="hero-alter-ego" />
-                    </div>
-                    <div class="field dob">
-                        <label for="hero-powers"> Select an image </label>
-                        <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
-                    </div>
-                    <div class="field dob">
-                        <label for="hero-powers"> Description </label>
-                        <input type="text" name="description" id="hero-descr" width="300px" />
-                    </div>
-                    <div class="actions">
-                        <button type="button" id="run"> Submit </button>
-                    </div>
-                </form>
-            </div>
-        </div>
 
     </header>
 
@@ -61,7 +63,7 @@
                 <img src="" class="img">
             </li>
         </template>
-
+        <div id="target"></div>
     </main>
     <script src="src/script.js"></script>
 </body>
