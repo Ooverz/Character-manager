@@ -29,8 +29,8 @@ window.onclick = function (event) {
     }
 }
 
+// Characters retriever 
 getData();
-
 const tpl = document.querySelector("#tpl-hero");
 const target = document.querySelector("#target");
 
@@ -42,9 +42,9 @@ async function getData() {
         object.forEach(({ description, id, image, name, shortDescription }) => {
             const elt = tpl.cloneNode(true).content;
 
-            elt.querySelector(".name").innerText = name;
-            elt.querySelector(".descri").innerText = shortDescription;
-            elt.querySelector(".img").src = `data:image/*;base64,${image}`;
+            elt.querySelector(".card-title").innerText = name;
+            elt.querySelector(".card-text").innerText = shortDescription;
+            elt.querySelector(".img-card").src = `data:image/*;base64,${image}`;
 
             target.appendChild(elt);
         });
@@ -52,6 +52,23 @@ async function getData() {
     } catch (err) {
         console.error(err);
     }
+
+    document.querySelector("#del").addEventListener("click", () => {
+        const conf = confirm("Are you sure you want to delete this character ? ");
+        if(conf){
+            fetch("https://character-database.becode.xyz/characters", {
+                method: "DELETE",
+                headers: new Headers({
+                    "Content-type": "application/json",
+                }),
+            })
+        }
+        document.location.reload();
+    });
+
+    document.querySelector("#edit").addEventListener("click", () => {
+        
+    })
 }
 
 document.querySelector("#run").addEventListener("click", async function () {
@@ -67,9 +84,20 @@ document.querySelector("#run").addEventListener("click", async function () {
             name,
             shortDescription,
             description,
-            // image,
+            image,
         })
 
-    })    
+    })
+    document.location.reload();
+});
+
+let image = ""
+document.querySelector('#hero-image').addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        image = reader.result.replace('data:', '').replace(/^.+,/, '');
+    };
+    reader.readAsDataURL(file);
 });
 

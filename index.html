@@ -35,11 +35,11 @@
                     </div>
                     <div class="field dob">
                         <label for="heroDes"> Description </label>
-                        <input type="text" name="description" id="hero-descr" width="300px" />
+                        <input type="text" name="description" id="hero-descr"/>
                     </div>
                     <div class="field dob">
                         <label for="heroImage"> Select an image </label>
-                        <input type="file" name="image" id="hero-image" accept=".jpg, .bmp" />
+                        <input type="file" name="image" id="hero-image" accept=".jpg, .bmp, .png, .gif, .jpeg" />
                     </div>
                     <div class="actions">
                         <button type="button" id="run"> Submit </button>
@@ -53,11 +53,36 @@
     <main>
 
         <template id="tpl-hero">
-            <li class="hero">
+            <div class="col mb-4">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="" alt="card-img" class="img-card">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <input class="btn btn-primary btnPopup editHero toggleScroll" type="button" id="edit" value="Edit">
+                                <input class="btn btn-danger deleteHero" type="button" id="del" value="Delete">
+                                <button class="btn open viewHero toggleScroll" type="submit">
+                                    <i class="fas fa-bars fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <li class="hero">
                 <h2 class="name"></h2>
                 <p class="descri"></p>
                 <img src="" class="img">
             </li>
+
+            <button type="button" id="edit"> Edit </button>
+            <button type="button" id="del"> Delete </button> -->
         </template>
         <div id="target"></div>
     </main>
