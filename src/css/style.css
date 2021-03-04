@@ -169,7 +169,6 @@ p {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    max-width: 30%;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
