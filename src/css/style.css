@@ -212,3 +212,33 @@ svg {
 img {
     border-style: none;
 }
+
+.overlayView {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: scroll;
+    display: none;
+}
+
+.overlayEdit {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: scroll;
+    display: none;
+}
+
+.popup {
+    margin: 10% auto;
+    margin-bottom: 10%;
+    width: 70%;
+}
