@@ -6,7 +6,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #0E0E10;
 }
 
 header {
@@ -170,11 +170,10 @@ p {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #464649;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
-    box-shadow: 2px 1px 5px grey;
 }
 
 .card-body {
