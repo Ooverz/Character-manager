@@ -1,6 +1,7 @@
 
 
 const inputs = Array.from(document.querySelectorAll("input"));
+const getId = new Array();
 console.log(inputs);
 
 // Get the modal
@@ -35,6 +36,7 @@ const tpl = document.querySelector("#tpl-hero");
 const target = document.querySelector("#target");
 
 async function getData() {
+
     try {
         const hero = await fetch("https://character-database.becode.xyz/characters");
         const object = await hero.json();
@@ -47,29 +49,47 @@ async function getData() {
             elt.querySelector(".img-card").src = `data:image/*;base64,${image}`;
 
             target.appendChild(elt);
+            getId.push(id);
+            delData();
         });
         console.log(object);
     } catch (err) {
         console.error(err);
     }
-
-    document.querySelector("#del").addEventListener("click", () => {
-        const conf = confirm("Are you sure you want to delete this character ? ");
-        if(conf){
-            fetch("https://character-database.becode.xyz/characters", {
-                method: "DELETE",
-                headers: new Headers({
-                    "Content-type": "application/json",
-                }),
-            })
-        }
-        document.location.reload();
-    });
-
-    document.querySelector("#edit").addEventListener("click", () => {
-        
-    })
 }
+
+// Delete a character 
+function delData(){
+    Array.from(document.querySelectorAll(".deleteHero")).forEach((btn, index) => {
+        btn.addEventListener("click", async () => {
+            console.log("toto");
+                const conf = confirm("Are you sure you want to delete this character ? ");
+                const id = getId[index];
+                if(conf){
+                    await fetch("https://character-database.becode.xyz/characters/" + id, { 
+                        method: "DELETE",
+                        headers: ({
+                            "Content-type": "application/json",
+                        }),
+                    })
+                }
+            document.location.reload();
+        })
+    });
+    
+}
+
+function updateData(){
+    Array.from(document.querySelector("editHero")).forEach((btn, index) => {
+        btn.addEventListener("click", () =>{
+            
+        })
+    });
+}
+
+document.querySelector("#edit").addEventListener("click", () => {
+    
+})
 
 // Adding a new char
 document.querySelector("#run").addEventListener("click", async function () {
@@ -87,7 +107,6 @@ document.querySelector("#run").addEventListener("click", async function () {
             description,
             image,
         })
-
     })
     document.location.reload();
 });
