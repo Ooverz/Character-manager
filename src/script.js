@@ -71,6 +71,7 @@ async function getData() {
     })
 }
 
+// Adding a new char
 document.querySelector("#run").addEventListener("click", async function () {
 
     const values = inputs.map(({ value }) => value.trim());
@@ -91,6 +92,7 @@ document.querySelector("#run").addEventListener("click", async function () {
     document.location.reload();
 });
 
+// Adding the new image
 let image = ""
 document.querySelector('#hero-image').addEventListener("change", (e) => {
     const file = e.target.files[0];
